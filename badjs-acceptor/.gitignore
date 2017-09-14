@@ -230,5 +230,5 @@ node_modules/
 #############
 ## my
 ############# 
-project.db  
+# project.db  
 *.bat
