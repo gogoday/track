@@ -53,10 +53,10 @@ echo 'done.'
 
 # 停止旧的服务
 echo 'kill old service ...'
-pkill -f 'badjs-web'
-pkill -f 'badjs-storage'
-pkill -f 'badjs-mp'
-pkill -f 'badjs-acceptor'
+ps aux | grep -ie 'badjs-web' | awk '{print $2}' | xargs kill -9
+ps aux | grep -ie 'badjs-storage' | awk '{print $2}' | xargs kill -9
+ps aux | grep -ie 'badjs-mq' | awk '{print $2}' | xargs kill -9
+ps aux | grep -ie 'badjs-acceptor' | awk '{print $2}' | xargs kill -9
 echo 'done.'
 
 # 启动新的服务
