@@ -20,6 +20,7 @@
         "module": "axon"
     },
     "email": {
+        "enable": false,
         "homepage": "http://badjs.com/index.html",
         "from": "noreply-badjs@demo.com",
         "emailSuffix" : "@demo.com",
@@ -33,12 +34,12 @@
     "plugin": [ 
         {
             "name": "feflow",
-            "enable": true,
+            "enable": false,
             "config": {}
         },
         {
             "name": "oa-login",
-            "enable": true,
+            "enable": false,
             "config": {}
         }
     ]

@@ -30,6 +30,9 @@ cp /data/badjs/badjs-installer/badjs-storage/project.json /data/badjs20/badjs/ba
 cp /data/badjs/badjs-installer/badjs-acceptor/project.json /data/badjs20/badjs/badjs-acceptor/
 cp /data/badjs/badjs-installer/badjs-mq/project.json /data/badjs20/badjs/badjs-mq/
 
+cp /data/badjs/badjs-installer/badjs-acceptor/project.db /data/badjs20/badjs/badjs-acceptor/
+cp /data/badjs/badjs-installer/badjs-mq/project.db /data/badjs20/badjs/badjs-mq/
+
 echo 'done.'
 
 # 读取旧的配置文件，生成新的配置文件

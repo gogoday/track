@@ -1,6 +1,7 @@
 var log4js = require('log4js'),
     logger = log4js.getLogger();
 
+var emailConf = global.pjconfig.email;
 
 
 
@@ -28,13 +29,15 @@ module.exports = function (){
 
         pushProject();
 
-
-         require("../service/OfflineLogService")();
+        require("../service/OfflineLogService")();
 
 
         // 邮件报表
-        var EmailService = require("../service/EmailService");
-        logger.info('start email report ...');
-        new EmailService().start();
+        if (emailConf.enable) {
+            var EmailService = require("../service/EmailService");
+            logger.info('start email report ...');
+            new EmailService().start();
+        }
     },3000)
+
 }
