@@ -72,12 +72,48 @@ var userAction = {
 
     register : function (params , req ,  res){
 
-
-        res.render('noregister');
-        return;
-
         var method = req.method.toLowerCase();
         if(method == "post"){
+
+            // 数据校验
+            var reg_map = {
+                username: {
+                    reg: /^[a-zA-Z]\w{4,15}$/,
+                    msg: '用户名为5-16位英文或数字，首字符为字母'
+                },
+                email: {
+                    reg: /^\w+@\w+\.\w+$/,
+                    msg: '邮箱格式为user@server.com'
+                },
+                password: {
+                    reg: /^\w{6,20}$/,
+                    msg: '密码为6到20位大小写字母或数字的组合'
+                }
+            }
+
+            function check(key) {
+                if (!reg_map[key].reg.test(req.body[key])) {
+
+                    res.render('register', { isUseOA : !! global.pjconfig.oos, name: req.body.username , email: req.body.email,  message : reg_map[key].msg} );
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+
+            if (!check('username')) {
+                return;
+            }
+
+            if (!check('email')) {
+                return;
+            }
+
+            if (!check('password')) {
+                return;
+            }
+
+
 
             if( !req.body.username || !req.body.password || !req.body.email) {
                 res.render('register', { isUseOA : !! global.pjconfig.oos, name: req.body.username ,  message : "帐号密码不能为空"} );
