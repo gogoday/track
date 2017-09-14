@@ -1,4 +1,5 @@
 # 开始升级
+echo 'this version 2.0'
 echo 'start upgrade badjs2.0....'
 echo 'The upgrade process will not be available and the upgrade process will take about 5 minutes'
 echo 'And sure mysql user and pass is `root`.'
@@ -53,10 +54,12 @@ echo 'done.'
 
 # 停止旧的服务
 echo 'kill old service ...'
-ps aux | grep -ie 'badjs-web' | awk '{print $2}' | xargs kill -9
-ps aux | grep -ie 'badjs-storage' | awk '{print $2}' | xargs kill -9
-ps aux | grep -ie 'badjs-mq' | awk '{print $2}' | xargs kill -9
-ps aux | grep -ie 'badjs-acceptor' | awk '{print $2}' | xargs kill -9
+pids=( $(pgrep -f badjs) )
+for pid in "${pids[@]}"; do
+  if [[ $pid != $$ ]]; then
+     kill "$pid"
+  fi
+done
 echo 'done.'
 
 # 启动新的服务
