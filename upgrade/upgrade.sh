@@ -35,6 +35,16 @@ echo 'done.'
 echo 'upgrade project.json file ...'
 node /data/badjs20/badjs/upgrade/upgrade_config.js
 echo  'done.'
+
+# 安装npm包
+echo 'npm install ...';
+cd /data/badjs20/badjs/badjs-web; npm install;
+cd /data/badjs20/badjs/badjs-storage; npm install;
+cd /data/badjs20/badjs/badjs-acceptor; npm install;
+cd /data/badjs20/badjs/badjs-mq; npm install;
+echo 'done .'
+
+
 # 更新mysql数据库
 echo 'mysql upgrade ...'
 mysql -uroot -proot < /data/badjs20/badjs/upgrade/sql.sql

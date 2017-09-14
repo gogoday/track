@@ -10,7 +10,7 @@ let moduls = ['web', 'acceptor', 'mq', 'storage'];
 
 
 moduls.forEach(item => {
-    let root_path = base_path + 'badjs-' + item; 
+    let root_path = base_path + '/badjs-' + item; 
     let old_json = require(root_path + '/project.json');
     let example_json = require(root_path + '/project.example.json');
 
@@ -18,7 +18,9 @@ moduls.forEach(item => {
     let target_json = copy(old_json, example_json);
     
 
-    fs.writeFile( root_path, JSON.stringify( target_json, null, 2 ), 'utf8' );
+    fs.writeFile( root_path + '/project.json', JSON.stringify( target_json, null, 2 ), 'utf8' , () => {
+
+    });
 })
 
 

@@ -7,6 +7,7 @@
     "axon": "^2.0.0",
     "badjs-plugin-feflow": "^1.0.1",
     "badjs-plugin-oa-login": "^1.0.0",
+    "bluebird": "^3.5.0",
     "body-parser": "^1.9.0",
     "compression": "^1.7.0",
     "connect-flash": "^0.1.1",
