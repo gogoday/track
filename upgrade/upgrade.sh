@@ -1,7 +1,7 @@
 # 开始升级
 echo 'start upgrade badjs2.0....'
 echo 'The upgrade process will not be available and the upgrade process will take about 5 minutes'
-echo 'And sure mysql user and pass is `root`? (y/n)'
+echo 'And sure mysql user and pass is `root`.'
 echo 'Are you sure to upgrade? (y/n)'
 read confirm
 
@@ -33,7 +33,7 @@ echo 'done.'
 
 # 读取旧的配置文件，生成新的配置文件
 echo 'upgrade project.json file ...'
-node /data/badjs20/badjs/upgrade/update_config.js
+node /data/badjs20/badjs/upgrade/upgrade_config.js
 echo  'done.'
 # 更新mysql数据库
 echo 'mysql upgrade ...'
