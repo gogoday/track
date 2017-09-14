@@ -20,7 +20,7 @@ echo 'done.'
 
 # 配置git拉取最新的代码
 echo 'git clone new code ...'
-git clone https://github.com/iv-web/badjs.git
+git clone https://github.com/gogoday/track.git badjs
 echo 'done.'
 # 备份配置文件
 echo 'backup config file ...'
