@@ -42,6 +42,7 @@ cd /data/badjs20/badjs/badjs-web; npm install;
 cd /data/badjs20/badjs/badjs-storage; npm install;
 cd /data/badjs20/badjs/badjs-acceptor; npm install;
 cd /data/badjs20/badjs/badjs-mq; npm install;
+cd /data/badjs20
 echo 'done .'
 
 
@@ -52,7 +53,10 @@ echo 'done.'
 
 # 停止旧的服务
 echo 'kill old service ...'
-pkill -f badjs-installer
+pkill -f 'badjs-web'
+pkill -f 'badjs-storage'
+pkill -f 'badjs-mp'
+pkill -f 'badjs-acceptor'
 echo 'done.'
 
 # 启动新的服务
