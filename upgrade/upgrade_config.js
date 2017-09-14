@@ -1,14 +1,16 @@
+'use strict';
+
 const path = require('path');
 const fs = require('fs');
 
-path = path.resolve(__dirname, '../');
+const base_path = path.resolve(__dirname, '../');
 
 let moduls = ['web', 'acceptor', 'mq', 'storage'];
 
 
 
 moduls.forEach(item => {
-    let root_path = path + 'badjs-' + item; 
+    let root_path = base_path + 'badjs-' + item; 
     let old_json = require(root_path + '/project.json');
     let example_json = require(root_path + '/project.example.json');
 
