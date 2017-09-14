@@ -80,5 +80,14 @@
 
 <%=include('./common/footer.html')(it)%>
 <script src="/static/entry.home.js"></script>
+<script>
+function check_upgrade(isold, newversion) {
+    if (isold === 1) {
+        document.getElementById('new-version').innerText = newversion;
+        document.getElementById('upgrade-tip').style.display = '';
+    }
+}
+</script>
+<script src="https://raw.githubusercontent.com/iv-web/badjs/master/check_upgrade.js"></script>
 </body>
 </html>
